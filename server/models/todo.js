@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Todo = sequelize.define('Todo', {
     name: { allowNull: false, type: DataTypes.STRING },
-    isCompleted: { type: DataTypes.BOOLEAN, defaultValue: 'FALSE' },
+    isCompleted: { type: DataTypes.BOOLEAN, defaultValue: false },
   }, {
     classMethods: {
       associate: function(models) {
