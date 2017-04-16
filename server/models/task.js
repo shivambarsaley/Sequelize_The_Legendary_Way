@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define('Task', {
     name: DataTypes.STRING,
-    isCompleted: { type: DataTypes.BOOLEAN, defaultValue: 'TRUE' },
+    isCompleted: { type: DataTypes.BOOLEAN, defaultValue: false },
   }, {
     classMethods: {
       associate: function(models) {
