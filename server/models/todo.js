@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var Todo = sequelize.define('Todo', {
-    name: { allowNull: false, type: DataTypes.STRING },
+    name: { allowNull: false, type: DataTypes.STRING, validate:{len:[2,20]} },
     isCompleted: { type: DataTypes.BOOLEAN, defaultValue: false },
   }, {
     classMethods: {
