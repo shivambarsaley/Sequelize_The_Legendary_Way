@@ -14,7 +14,9 @@ const getTodosForUser = (UserId, includeTasks = true) => {
 
 const addTodo = (UserId, CategoryId, todoName) => {
 
-  return Model.Todo.create({UserId, CategoryId, name:todoName});
+  return Model.Todo.create({UserId, CategoryId, name:todoName})
+  .catch(Model.Sequelize.ValidationError, (e)=> console.log("Dude... Those fields ain't valid",e))
+  .catch((e)=> {console.log('Something else wrong here',e)})
 };
 
 const markAsComplete = (id) => {
